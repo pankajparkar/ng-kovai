@@ -40,19 +40,15 @@ export class ModelDrivenComponent implements OnInit {
   }
 
   getLanguages() {
-    return (this.profileForm.get('languages') as FormArray).controls
+    return (this.profileForm.get('languages') as FormArray).controls;
   }
 
   ngOnInit(): void {
     this.profileForm = this.fb.group({
-      firstName: new FormControl('', [Validators.required]),
-      lastName: ['', [Validators.required]],
+      fullName: new FormControl('', [Validators.required]),
       email: [''],
       address: ['', [Validators.required]],
       address2: ['', [Validators.required]],
-      state: ['', [Validators.required]],
-      city: ['', [Validators.required]],
-      postalCode: ['', [Validators.required]],
       languages: this.fb.array([])
     });
   }
