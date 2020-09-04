@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('leveraging-power-of-angular-forms app is running!');
+    expect(page.getTitleText()).toEqual('power-of-angular-forms app is running!');
   });
 
   afterEach(async () => {

@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { UserProfileTemplateComponent } from './user-profile-template/user-profile-template.component';
-import { UserProfileModelComponent } from './user-profile-model/user-profile-model.component';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { ModelDrivenComponent } from './model-driven/model-driven.component';
+import { TypedFormsComponent } from './typed-forms/typed-forms.component';
+import { BasicComponent } from './basic/basic.component';
 import { HomeComponent } from './home/home.component';
 
-
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'user-profile', component: UserProfileComponent },
-  { path: 'user-profile-template', component: UserProfileTemplateComponent },
-  { path: 'user-profile-model', component: UserProfileModelComponent },
-  { path: 'home', component: HomeComponent },
-  { path: '**', redirectTo: 'home' },
+  {path: 'home', component: HomeComponent},
+  {path: 'basic', component: BasicComponent},
+  {path: 'template-driven', component: TemplateDrivenComponent},
+  {path: 'model-driven', component: ModelDrivenComponent},
+  {path: 'typed-forms', component: TypedFormsComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '**', redirectTo: 'home'},
 ];
 
 @NgModule({

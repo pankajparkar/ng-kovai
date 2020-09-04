@@ -1,26 +1,14 @@
-<div class="list-group">
-    <a routerLink="../login" class="list-group-item list-group-item-action flex-column align-items-start">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1" >Login Page</h5>
-      </div>
-      <p class="mb-1">Login page to demonstrate form states</p>
-    </a>
-    <a routerLink="../user-profile" class="list-group-item list-group-item-action flex-column align-items-start">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">User Profile</h5>
-      </div>
-      <p class="mb-1">User profile page to demonstrate user on page.</p>
-    </a>
-    <a routerLink="../user-profile-template" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">User Profile (Template Driven)</h5>
-        </div>
-        <p class="mb-1">User profile template driven forms</p>
-      </a>
-      <a routerLink="../user-profile-model" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">User Profile (Model Driven)</h5>
-        </div>
-        <p class="mb-1">User profile page to model driven reactive forms</p>
-      </a>
-  </div>
+<mat-grid-list cols="2" rowHeight="2:1" class="navigations">
+    <mat-grid-tile>
+        <a routerLink="../basic">Basic</a>
+    </mat-grid-tile>
+    <mat-grid-tile routerLink="template-driven">
+        <a routerLink="../template-driven">Template Driven</a>
+    </mat-grid-tile>
+    <mat-grid-tile routerLink="model-driven">
+        <a routerLink="../model-driven">Model Driven</a>
+    </mat-grid-tile>
+    <mat-grid-tile routerLink="typed-forms">
+        <a routerLink="../typed-forms">Typed Forms</a>
+    </mat-grid-tile>
+</mat-grid-list>

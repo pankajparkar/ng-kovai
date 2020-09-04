@@ -1,31 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+import { SharedMaterialModule } from './shared-material/shared-material.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { UserProfileTemplateComponent } from './user-profile-template/user-profile-template.component';
-import { UserProfileModelComponent } from './user-profile-model/user-profile-model.component';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { ModelDrivenComponent } from './model-driven/model-driven.component';
+import { TypedFormsComponent } from './typed-forms/typed-forms.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
-import { MatcherDirective } from './directives/matcher.directive';
+import { BasicComponent } from './basic/basic.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    UserProfileComponent,
-    UserProfileTemplateComponent,
-    UserProfileModelComponent,
+    TemplateDrivenComponent,
+    ModelDrivenComponent,
+    TypedFormsComponent,
     HomeComponent,
-    MatcherDirective
+    BasicComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

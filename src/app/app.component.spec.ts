@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'leveraging-power-of-angular-forms'`, () => {
+  it(`should have as title 'power-of-angular-forms'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('leveraging-power-of-angular-forms');
+    expect(app.title).toEqual('power-of-angular-forms');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('leveraging-power-of-angular-forms app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('power-of-angular-forms app is running!');
   });
 });
