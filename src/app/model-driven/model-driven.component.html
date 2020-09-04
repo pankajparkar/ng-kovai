@@ -34,12 +34,12 @@
     </button>
 
     <div formArrayName="languages">
-      <ng-container *ngFor="let langControl of getLanguages();let i = index">
+      <ng-container *ngFor="let item of getLanguages();let i = index">
         <div [formGroupName]="i">
           <mat-form-field>
             <mat-label>Language Name</mat-label>
             <mat-select formControlName="language">
-              <mat-option *ngFor="let language of ['Hindi', 'English', 'Marathi']" [value]="food">
+              <mat-option *ngFor="let language of languages" [value]="language">
                 {{language}}
               </mat-option>
             </mat-select>
@@ -47,8 +47,8 @@
           <mat-form-field>
             <mat-label>Fluency</mat-label>
             <mat-select formControlName="fluency">
-              <mat-option *ngFor="let language of ['Fluent', 'Native']" [value]="food">
-                {{language}}
+              <mat-option *ngFor="let proficiency of proficiencies" [value]="proficiency">
+                {{proficiency}}
               </mat-option>
             </mat-select>
           </mat-form-field>

@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateDrivenComponent implements OnInit {
 
+  languages = ['Hindi', 'English', 'Marathi'];
+  proficiencies = ['Fluent', 'Native'];
+
   model: any = {};
   required: any = false;
 

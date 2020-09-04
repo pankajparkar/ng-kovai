@@ -8,6 +8,9 @@ import { FormGroup, FormBuilder, Validators, FormControl, FormArray } from '@ang
 })
 export class ModelDrivenComponent implements OnInit {
 
+  languages = ['Hindi', 'English', 'Marathi'];
+  proficiencies = ['Fluent', 'Native'];
+
   // FormControl
   // FormGroup
   // FormArray

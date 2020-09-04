@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TypedFormsComponent implements OnInit {
 
+  languages = ['Hindi', 'English', 'Marathi'];
+  proficiencies = ['Fluent', 'Native'];
+
   constructor() { }
 
   ngOnInit(): void {

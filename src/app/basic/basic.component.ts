@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./basic.component.scss']
 })
 export class BasicComponent implements OnInit {
-
+  languages = ['Hindi', 'English', 'Marathi'];
+  proficiencies = ['Fluent', 'Native'];
   constructor() { }
 
   ngOnInit(): void {

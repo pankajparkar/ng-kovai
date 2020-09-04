@@ -40,17 +40,17 @@
       <div>
         <mat-form-field>
           <mat-label>Language Name</mat-label>
-          <mat-select name="language" [(ngModel)]="item.language">
-            <mat-option *ngFor="let lang of ['Hindi', 'English', 'Marathi']" [value]="lang">
-              {{lang}}
+          <mat-select>
+            <mat-option *ngFor="let language of languages" [value]="language">
+              {{language}}
             </mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Fluency</mat-label>
           <mat-select>
-            <mat-option *ngFor="let language of ['Fluent', 'Native']" [value]="language">
-              {{language}}
+            <mat-option *ngFor="let proficiency of proficiencies" [value]="proficiency">
+              {{proficiency}}
             </mat-option>
           </mat-select>
         </mat-form-field>
