@@ -58,11 +58,11 @@ export class ModelDrivenComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.profileForm = this.fb.group({
+    this.profileForm = new FormGroup({
       fullName: new FormControl(''),
-      email: new FormControl(['']),
-      address: new FormControl(['', [Validators.required]]),
-      address2: new FormControl(['', [Validators.required]]),
+      email: new FormControl(''),
+      address: new FormControl('', [Validators.required]),
+      address2: new FormControl('', [Validators.required]),
       languages: new FormArray([])
     });
   }
