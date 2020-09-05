@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, FormArray } from '@angular/forms';
 
 @Component({
-  selector: 'poaf-typed-forms',
-  templateUrl: './typed-forms.component.html',
-  styleUrls: ['./typed-forms.component.scss']
+  selector: 'poaf-model-driven',
+  templateUrl: './model-driven.component.html',
+  styleUrls: ['./model-driven.component.scss']
 })
-export class TypedFormsComponent implements OnInit {
-
+export class ModelDrivenComponent implements OnInit {
 
   languages = ['Hindi', 'English', 'Marathi'];
   proficiencies = ['Fluent', 'Native'];
@@ -43,18 +42,28 @@ export class TypedFormsComponent implements OnInit {
     languagesFormArray.push(newLanguage);
   }
 
+  markAllRequired() {
+    const keys = Object.keys(this.profileForm.controls).forEach(
+      control => {
+        const currentControl = this.profileForm.get(control);
+        currentControl.clearValidators();
+        currentControl.setValidators([Validators.required]);
+        currentControl.updateValueAndValidity();
+      }
+    )
+  }
+
   getLanguages() {
     return (this.profileForm.get('languages') as FormArray).controls;
   }
 
   ngOnInit(): void {
-    this.profileForm = this.fb.group({
-      fullName: new FormControl('', [Validators.required]),
-      email: [''],
-      address: ['', [Validators.required]],
-      address2: ['', [Validators.required]],
-      languages: this.fb.array([])
+    this.profileForm = new FormGroup({
+      fullName: new FormControl(''),
+      email: new FormControl(''),
+      address: new FormControl('', [Validators.required]),
+      address2: new FormControl('', [Validators.required]),
+      languages: new FormArray([])
     });
   }
-
 }
