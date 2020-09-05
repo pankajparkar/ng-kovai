@@ -9,40 +9,8 @@ export class TemplateDrivenComponent implements OnInit {
 
   languages = ['Hindi', 'English', 'Marathi'];
   proficiencies = ['Fluent', 'Native'];
-
-  model: any = {};
-  required: any = false;
-
   constructor() { }
 
   ngOnInit(): void {
-    this.model = {
-      firstName: 'Pankaj',
-      lastName: 'Parkar',
-      email: 'parkar@sd.com',
-      address: {
-        address1: '1 ave',
-        address2: 'test',
-        city: 'Mumbai',
-        state: 'MH',
-        postalCode: 23423
-      },
-      languages: []
-    }
   }
-
-  markAllRequired() {
-    this.required = true;
-  }
-
-  addLanguage() {
-    this.model.languages.push({
-      language: ''
-    });
-  }
-
-  submit(form) {
-    console.log(form.values);
-  }
-
 }

@@ -1,14 +1,10 @@
-<button type="text" mat-raised-button color="primary" (click)="markAllRequired()">
+<button type="text" mat-raised-button color="primary">
   Mark All fields Required
 </button>
-{{ profileForm.value | json }}
-<form novalidate #profileForm="ngForm" (ngSubmit)="submit(profileForm)">
+<form novalidate>
   <mat-form-field>
     <mat-label>Full name</mat-label>
-    <input matInput #fullNameControl="ngModel" name="fullName" [(ngModel)]="model.fullName" [required]="required">
-    <mat-error>
-      {{fullNameControl.errors | json}}
-    </mat-error>
+    <input matInput>
   </mat-form-field>
   <div>
     <mat-slide-toggle style="margin-right: 10px;">
@@ -16,27 +12,26 @@
     </mat-slide-toggle>
     <mat-form-field>
       <mat-label>Email</mat-label>
-      <input matInput name="email" [(ngModel)]="model.email" [required]="required">
+      <input matInput>
     </mat-form-field>
   </div>
-  <div class="address" ngModelGroup="address">
+  <div class="address">
     <h4>Current Address</h4>
     <mat-form-field>
       <mat-label>Address</mat-label>
-      <textarea matInput placeholder="Ex. 100 Main St" name="address1" ngModel [required]="required">
-      </textarea>
+      <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Address 2</mat-label>
-      <textarea matInput name="address2" ngModel="address2" [required]="required"></textarea>
+      <textarea matInput></textarea>
     </mat-form-field>
   </div>
   <div>
     <h4>Languages</h4>
-    <button type="button" mat-stroked-button (click)="addLanguage()">
+    <button type="button" mat-stroked-button>
       <mat-icon>add</mat-icon> Add
     </button>
-    <ng-container *ngFor="let item of model.languages">
+    <ng-container *ngFor="let item of [1,2]">
       <div>
         <mat-form-field>
           <mat-label>Language Name</mat-label>
