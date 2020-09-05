@@ -2,7 +2,7 @@ import { Directive } from '@angular/core';
 import { Validator, AbstractControl, NG_VALIDATORS } from '@angular/forms';
 
 @Directive({
-  selector: '[poafAlphaNumeric][ngModel]',
+  selector: '[poafAlphaNumeric][ngModel],[poafAlphaNumeric][formControlName],[poafAlphaNumeric][formControl]',
   providers: [{
     provide: NG_VALIDATORS,
     useExisting: AlphaNumericDirective,
