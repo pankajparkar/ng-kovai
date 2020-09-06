@@ -1,10 +1,11 @@
-<button type="text" mat-raised-button color="primary">
+<button type="text" mat-raised-button color="primary" (click)="markAllFieldsRequired()">
   Mark All fields Required
 </button>
-<form novalidate>
+{{ profileForm.value | json }}
+<form novalidate [formGroup]="profileForm">
   <mat-form-field>
     <mat-label>Full name</mat-label>
-    <input matInput>
+    <input matInput formControlName="fullName">
   </mat-form-field>
   <div>
     <mat-slide-toggle style="margin-right: 10px;">
@@ -12,21 +13,21 @@
     </mat-slide-toggle>
     <mat-form-field>
       <mat-label>Email</mat-label>
-      <input matInput>
+      <input matInput formControlName="email">
     </mat-form-field>
   </div>
   <div class="address">
     <h4>Current Address</h4>
     <mat-form-field>
       <mat-label>Address</mat-label>
-      <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+      <textarea matInput formControlName="address" placeholder="Ex. 100 Main St"></textarea>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Address 2</mat-label>
-      <textarea matInput></textarea>
+      <textarea matInput  formControlName="address2"></textarea>
     </mat-form-field>
   </div>
-  <div>
+  <!-- <div>
     <h4>Languages</h4>
     <button type="button" mat-stroked-button>
       <mat-icon>add</mat-icon> Add
@@ -51,7 +52,7 @@
         </mat-form-field>
       </div>
     </ng-container>
-  </div>
+  </div> -->
   <button type="submit" mat-raised-button color="primary">
     Submit
   </button>

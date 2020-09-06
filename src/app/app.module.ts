@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { BasicComponent } from './basic/basic.component';
 import { AlphaNumericDirective } from './directives/alpha-numeric.directive';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { AlphaNumericDirective } from './directives/alpha-numeric.directive';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedMaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Directive } from '@angular/core';
-import { Validator, AbstractControl, NG_VALIDATORS } from '@angular/forms';
+import { Validator, NG_VALIDATORS } from '@angular/forms';
+import { AbstractControl } from '@ngneat/reactive-forms';
 
 @Directive({
   selector: '[poafAlphaNumeric][ngModel],[poafAlphaNumeric][formControlName],[poafAlphaNumeric][formControl]',

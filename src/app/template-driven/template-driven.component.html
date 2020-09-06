@@ -1,10 +1,11 @@
-<button type="text" mat-raised-button color="primary">
+<button type="text" mat-raised-button color="primary" (click)="allFieldRequired = true">
   Mark All fields Required
 </button>
-<form novalidate>
+{{ profileForm.value | json}}
+<form novalidate #profileForm="ngForm" (ngSubmit)="submit(profileForm)">
   <mat-form-field>
     <mat-label>Full name</mat-label>
-    <input matInput>
+    <input matInput name="fullName1" [(ngModel)]="model.fullName" [required]="allFieldRequired">
   </mat-form-field>
   <div>
     <mat-slide-toggle style="margin-right: 10px;">
@@ -12,45 +13,19 @@
     </mat-slide-toggle>
     <mat-form-field>
       <mat-label>Email</mat-label>
-      <input matInput>
+      <input matInput name="email" [(ngModel)]="model.email"  [required]="allFieldRequired">
     </mat-form-field>
   </div>
   <div class="address">
     <h4>Current Address</h4>
     <mat-form-field>
       <mat-label>Address</mat-label>
-      <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+      <textarea matInput placeholder="Ex. 100 Main St" name="address" [(ngModel)]="model.address"  [required]="allFieldRequired"></textarea>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Address 2</mat-label>
-      <textarea matInput></textarea>
+      <textarea matInput name="address2" [(ngModel)]="model.address2"  [required]="allFieldRequired"></textarea>
     </mat-form-field>
-  </div>
-  <div>
-    <h4>Languages</h4>
-    <button type="button" mat-stroked-button>
-      <mat-icon>add</mat-icon> Add
-    </button>
-    <ng-container *ngFor="let item of [1,2]">
-      <div>
-        <mat-form-field>
-          <mat-label>Language Name</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let language of languages" [value]="language">
-              {{language}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Fluency</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let proficiency of proficiencies" [value]="proficiency">
-              {{proficiency}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-    </ng-container>
   </div>
   <button type="submit" mat-raised-button color="primary">
     Submit
